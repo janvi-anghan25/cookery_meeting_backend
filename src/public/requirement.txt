@@ -1,0 +1,10 @@
+- user login
+- chef login
+- chef create package
+- get package list
+- delete package
+- update package
+- chef add time schedule
+- if some user buy that schedule then show busy
+- one user can buy only one schedule on a day
+- video call schedule

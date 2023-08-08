@@ -1,0 +1,105 @@
+Register Chef
+
+curl --location --request POST 'http://localhost:3000/api/chef/signup' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "firstname": "john",
+    "lastname": "doe",
+    "email": "parthpadhiar+1@foxbrains.com",
+    "password": "12345678",
+    "confirmPassword": "12345678",
+    "phone_number": "7878925481"
+}'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Login Chef
+
+curl --location --request POST 'http://localhost:3000/api/chef/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"email":"parthpadhiar+1@foxbrains.com",
+	"password":"12345678"
+}'
+--------------------------------------------------------------------------------------------------------------------------------------
+verify chef
+
+curl --location --request GET 'http://localhost:3000/api/chef/email_verification/033165'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Create Package
+
+curl --location --request POST 'http://localhost:3000/api/chef/package' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJhcHBvaW50ZWVfaWQiOiIzZmU5ZTg5OS1iNmZmLTRlZjEtYTMxNS1kMjM0ZmY0OWMxYzIiLCJlbWFpbCI6InBhcnRocGFkaGlhcisxQGZveGJyYWlucy5jb20ifSwiaWF0IjoxNjIwNDU1MTA4fQ.haN71RLyK2vuELgrJXLUrbxjc_rQA8ir3B6ID9XaZfY' \
+--form 'package_name="cooking"' \
+--form 'amount="[{\"people\": 1, \"price\": 10},{\"people\": 2, \"price\": 20}]"' \
+--form 'meeting_hours="[{\"start_time\":\"10:00\",\"details\":\"Tea and coffee\"},{\"start_time\":\"10:30\",\"details\":\"Break fast\"},{\"start_time\":\"11:00\",\"details\":\"Poha\"},{\"start_time\":\"11:30\",\"details\":\"Indian spices\"},{\"start_time\":\"12:00\",\"details\":\"Roti\"},{\"start_time\":\"12:30\",\"details\":\"lunch\"},{\"start_time\":\"13:00\",\"details\":\"Pulav\"},{\"start_time\":\"13:30\",\"details\":\"gobi \"}]"'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Get Package
+
+curl --location --request GET 'http://localhost:3000/api/chef/package?package_id=facaa534-3b86-4a52-8ce6-9eb2eac19205' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJhcHBvaW50ZWVfaWQiOiIzZmU5ZTg5OS1iNmZmLTRlZjEtYTMxNS1kMjM0ZmY0OWMxYzIiLCJlbWFpbCI6InBhcnRocGFkaGlhcisxQGZveGJyYWlucy5jb20ifSwiaWF0IjoxNjIwNDU1MTA4fQ.haN71RLyK2vuELgrJXLUrbxjc_rQA8ir3B6ID9XaZfY'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+update Package
+
+curl --location --request PUT 'http://localhost:3000/api/chef/package?package_id=e2bf2d0a-3d50-470c-ad7d-bc0e1ce82f08' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJhcHBvaW50ZWVfaWQiOiIzZmU5ZTg5OS1iNmZmLTRlZjEtYTMxNS1kMjM0ZmY0OWMxYzIiLCJlbWFpbCI6InBhcnRocGFkaGlhcisxQGZveGJyYWlucy5jb20ifSwiaWF0IjoxNjIwNDU1MTA4fQ.haN71RLyK2vuELgrJXLUrbxjc_rQA8ir3B6ID9XaZfY' \
+--form 'package_name="cooking1"' \
+--form 'amount="[{\"people\": 1, \"price\": 11},{\"people\": 2, \"price\": 22}]"' \
+--form 'meeting_hours="[{\"start_time\":\"10:00\",\"details\":\"Tea and coffee\"},{\"start_time\":\"10:30\",\"details\":\"Break fast\"},{\"start_time\":\"11:00\",\"details\":\"Poha\"},{\"start_time\":\"11:30\",\"details\":\"Indian spices\"},{\"start_time\":\"12:00\",\"details\":\"Roti\"},{\"start_time\":\"12:30\",\"details\":\"lunch\"},{\"start_time\":\"13:00\",\"details\":\"Pulav\"},{\"start_time\":\"13:30\",\"details\":\"gobi \"}]"'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+delete Package
+
+curl --location --request DELETE 'http://localhost:3000/api/chef/package?package_id=c1b5d005-dc9f-48f9-89de-fdcc9361c062' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJhcHBvaW50ZWVfaWQiOiIzZmU5ZTg5OS1iNmZmLTRlZjEtYTMxNS1kMjM0ZmY0OWMxYzIiLCJlbWFpbCI6InBhcnRocGFkaGlhcisxQGZveGJyYWlucy5jb20ifSwiaWF0IjoxNjIwNDU1MTA4fQ.haN71RLyK2vuELgrJXLUrbxjc_rQA8ir3B6ID9XaZfY'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Set default
+
+curl --location --request PUT 'http://localhost:3000/api/chef/package/default?package_id=caad6103-9614-4578-91ae-bc4d4bfd4c21' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJhcHBvaW50ZWVfaWQiOiIzZmU5ZTg5OS1iNmZmLTRlZjEtYTMxNS1kMjM0ZmY0OWMxYzIiLCJlbWFpbCI6InBhcnRocGFkaGlhcisxQGZveGJyYWlucy5jb20ifSwiaWF0IjoxNjIwNDU1MTA4fQ.haN71RLyK2vuELgrJXLUrbxjc_rQA8ir3B6ID9XaZfY'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Get Chef Package List
+
+curl --location --request GET 'http://localhost:3000/api/chef/package/list' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJhcHBvaW50ZWVfaWQiOiIzZmU5ZTg5OS1iNmZmLTRlZjEtYTMxNS1kMjM0ZmY0OWMxYzIiLCJlbWFpbCI6InBhcnRocGFkaGlhcisxQGZveGJyYWlucy5jb20ifSwiaWF0IjoxNjIwNDU1MTA4fQ.haN71RLyK2vuELgrJXLUrbxjc_rQA8ir3B6ID9XaZfY'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Get all packages
+
+curl --location --request GET 'http://localhost:3000/api/user/package/list'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+get package details
+
+curl --location --request GET 'http://localhost:3000/api/user/package?package_id=caad6103-9614-4578-91ae-bc4d4bfd4c21'
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------
+

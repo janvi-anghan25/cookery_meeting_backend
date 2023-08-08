@@ -1,0 +1,336 @@
+err_0	Internal server error. Please try again after sometime
+***** AUTH API ***** 
+err_1	First name is required
+err_2	Last name is required
+err_3	Please provide a valid secret
+err_4	Phone Number is required
+err_5	Country is required
+err_6	Country code is required
+err_7	Invalid email address
+err_8	Password must be at least 8 characters in length
+err_9	Passwords don't match
+err_10	This email is already registered
+err_11	User does not belong to any account
+err_12	Your account E-mail address is not verified. We have send new verification link to your email address. Please check mail box and verify your email
+err_13	Invalid email or password
+err_14	Your account is deleted
+err_15	Your account is deactivated. Please Contact us
+err_16	Please login with google account
+err_17	Please login with facebook account
+err_18	Password reset token is not valid
+err_19	Old password does not match
+err_20 You can not delete account, you have meetings to finish
+
+Success	
+	
+succ_1	You have successfully registered
+succ_2	You have login successfully
+succ_3	Password reset email Sent
+succ_4	Your password has been changed successfully
+succ_5	Your email is verified
+succ_6	Account fetched successfully
+succ_7	Account updated successfully
+succ_8	Publish account status updated successfully
+succ_9 Account deleted successfully
+	
+*****  PACKAGE API	*****
+Error	
+err_21 Package name is required
+err_22 maximum portfolio is required
+err_23 Package amount is required
+err_24 Package does not exist
+err_25 Already Active Package
+err_26 Something went wrong on Stripe's end
+err_27 You have purchased this packaged already
+err_28 Selected packages maximum portfolio is less than current package
+err_29 status is required
+err_30 Package has active chef
+err_31 Expire date must be grater than today date
+err_32 Reference Name is Required
+err_33 Total Number of Code is Required
+err_34 Expiry Date is Required
+err_35 Promo Code Name is Required
+err_36 Maximum Portfolio is Required
+err_37 Promo Code Duration is Required.
+err_38 Promo code id is Required
+err_38 Promo code does not exist
+err_39 Package id is required
+err_40 Maximum recipe is required
+err_65 Maximum coupon is required
+
+Success	
+succ_21	Package created successfully
+succ_22	All packages fetched successfully
+succ_23	Package data fetched successfully
+succ_24	Your package updated successfully
+succ_25	Your package deleted successfully
+succ_26	Package set to default successfully
+succ_27	Package Purchased successfully
+succ_28 Current Active Package
+succ_29 Promocode created successfully
+succ_30 Promocode List Fetch successfully
+succ_31 Promocode Deleted successfully
+
+*****  PACKAGE PURCHASED API	*****
+Error	
+err_41 Purchased Id is required
+err_42 Purchased Id does not exist
+err_43 Chef data not found
+err_44 Chef has already applied promo
+err_45 Promo code is already Redeemed
+err_46 Promo code is expired
+err_47 Promo code is already Redeemed
+err_48 Promo data not found
+err_50 Promocode value is required
+
+Success	
+succ_41 Purchased list fetched successfully
+succ_42 Purchased details fetched successfully
+succ_43 Promocode applied successfully
+
+***** PORTFOLIO API *****
+Error
+err_51 Chef don't have any active package
+err_52 Maximum portfolio limit has been reached
+err_53 Portfolio name is required
+err_54 Category is required
+err_55 Meeting hours name is required
+err_56 Amount is required
+err_57 Portfolio Id is required
+err_58 Portfolio does not exist
+err_59 Chef Id is required
+err_60 Chef does not exist
+err_79 Maximum recipe limit has been reached
+err_80 Maximum coupon limit has been reached
+
+
+Success
+succ_51 Portfolio created successfully
+succ_52 Portfolio updated successfully
+succ_53 Portfolio deleted successfully
+succ_54 Portfolio details fetch successfully
+succ_55 Portfolio status updated successfully
+succ_56 Portfolio duplicated successfully
+succ_57 Fetch All portfolios
+
+***** RECIPE OPTIONS API *****
+Error
+err_61 option Name is required
+err_62 Category is required
+err_63 Recipe option does not exist
+err_64 Recipe option id is required
+
+Success
+succ_61 Recipe option added successfully
+succ_62 Recipe option fetch successfully
+succ_63 Recipe option deleted successfully
+succ_64 Recipe option updated successfully
+succ_65 All Recipe option fetch successfully
+
+***** RECIPE API *****
+Error
+err_71 recipe name is required
+err_72 Description is required
+err_73 Ingredients are required
+err_74 Recipe Does not exist
+err_75 Recipe Id is required
+err_76 Recipe Status is required
+err_77 Recipe can not deleted it has active portfolio
+err_78 Recipe has active portfolio
+
+Success
+succ_71 Recipe Added successfully
+succ_72 Recipe Details Fetch successfully
+succ_73 Recipe updated successfully
+succ_74 Recipe deleted successfully
+succ_75 Recipe status updated successfully
+succ_75 All recipe fetch successfully
+
+***** STRIPE, RATE LIMIT, CONFIG *****
+
+err_81 You have not connected with our market place
+err_82 Too many requests, try again later
+err_83 First Set Config
+
+Success
+
+succ_81 Connected with stripe successfully
+succ_82 Stripe dashboard
+succ_83 Stripe Account info
+succ_84 Config data added successfully
+succ_85 Config Data fetch successfully
+
+***** TIME SLOT API *****
+Error
+
+err_91 Chef has already time slots added 
+err_92 Working data not available 
+err_93 You can not delete it, because User has booked meeting
+err_94 Please Add your working details first
+
+Success
+
+succ_91 successfully add working data
+succ_92 successfully fetch working data
+succ_93 successfully update working data
+succ_94 successfully deleted working data
+
+
+***** INVOICE API *****
+Error
+err_101 Invoice Id is required
+err_102 Invoice does not exist
+
+Success
+succ_101 Invoice Fetch successfully
+succ_102 All Invoice Fetch successfully
+
+***** CART API *****
+Error
+err_111 Portfolio does not exist
+err_112 Chef is not connected with stripe
+err_113 On Selected date chef is not available
+err_114 Already add portfolio for Selected date
+err_115 Selected portfolio chef is different
+err_116 Number of People is required
+err_117 Date is required
+err_118 Same Portfolio Can not be added
+err_119 Cart is Empty
+err_120 Coupon is of different chef
+err_121 Coupon Already Applied
+err_122 On these date user have already booking
+
+Success
+succ_111 Portfolio Added to cart successfully
+succ_112 Cart Data Fetch successfully
+succ_113 Cart Data Cleared successfully
+succ_114 Cart Data Edited successfully
+succ_115 Portfolio Removed from cart successfully
+succ_116 Cart Status Fetch successfully
+succ_117 Coupon Applied successfully
+
+***** CHEF API *****
+Error
+
+Success
+succ_131 All Chef Fetch successfully
+succ_132 Chef Details successfully
+
+
+***** COUPON API *****
+Error
+err_141 Coupon status can not set to expire
+err_142 Coupon name is required
+err_143 Coupon max redemptions is required
+err_144 Coupon Percent Off or amount off is required
+err_145 Coupon expire date is required
+err_146 Coupon Code is required
+err_147 Coupon does not exist
+err_148 Coupon Id is required
+err_149 Coupon status is required
+
+
+Success
+succ_141 Coupon Created successfully
+succ_142 Coupon details fetch successfully
+succ_143 Coupon Deleted successfully
+succ_144 Coupon status changed successfully
+succ_145 Coupon List fetch successfully
+
+***** ORDER API *****
+Error
+err_151 Refund can not available for less than 2 days
+err_152 Not Eligible for Refund
+err_153 Order Number is required
+err_154 Order Details not found for Refund
+err_155 Refund Id is required
+err_156 Refund is not found
+err_157 Order is not found
+err_158 Status is not valid
+
+Success
+succ_151 Session Id get successfully 
+succ_152 Order List fetch successfully 
+succ_153 Refund is successfully 
+succ_154 Refund List Fetch successfully
+succ_155 Refund details Fetch successfully
+succ_156 Order details Fetch successfully
+succ_157 Order updated successfully
+
+***** RATING API *****
+Error
+err_171 User must have had order before
+err_172 User have already add Rating
+err_173 Rating is required
+err_174 Review title is required
+err_175 Review is required
+
+Success
+succ_171 Rating added successfully
+succ_172 All Rating Fetch successfully
+succ_173 Top chefs fetch successfully
+succ_174 Top portfolios fetch successfully
+
+***** DASHBOARD API *****
+Success
+succ_181 Get card data fetch successfully
+
+***** FEEDBACK API *****
+Error
+err_181 You have exceeded maximum character limit in feedback type
+err_182 You have exceeded maximum character limit in title
+err_183 You have exceeded maximum character limit in description text
+err_184 Please enter feedback id
+err_185 Please enter status
+err_186 Feedback data not found
+
+Success
+succ_182 You have successfully added feedback
+succ_183 Feedback status updated successfully
+succ_184 Feedback data fetched successfully
+
+***** CONTACT US API *****
+Error 
+err_191 You have exceeded maximum character limit in full Name
+err_192 Please enter email
+err_193 You have exceeded maximum character limit in message
+
+Success
+succ_191 You have successfully added contactUsData
+succ_192 Contact us data fetched successfully
+succ_193 Order chart data fetched successfully
+
+***** QNA API *****
+Error 
+err_196 Please enter question
+err_197 Please enter answer
+err_198 Please enter qna id
+err_199 Qna data not found
+
+Success
+succ_196 QNA added successfully
+succ_197 QNA data fetched successfully
+succ_198 Question added successfully
+succ_199 QNA data updated successfully
+succ_200 Update answer successfully
+succ_201 QNA deleted successfully
+
+***** FAQ API *****
+Error 
+err_200 Please enter faq id
+err_201 FAQ data not found
+
+Success
+succ_202 FAQ added successfully
+succ_203 FAQ data fetched successfully
+succ_204 FAQ data updated successfully
+succ_205 FAQ data deleted successfully
+
+***** MESSAGE API *****
+Error
+
+Success
+succ_301 Room created successfully
+succ_302 Room already exists
+succ_303 User data fetched successfully
+succ_304 Room data fetched successfully

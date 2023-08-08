@@ -1,0 +1,18 @@
+export const constants = {
+  ADMIN_LOGIN: 'adminLogin',
+  ADMIN_SIGNUP: 'adminSignup',
+  ADMIN_FORGOT_PASSWORD: 'adminForgotPassword',
+  ADMIN_CHANGE_PASSWORD: 'adminChangePassword',
+  CHANGE_PASSWORD_OTP: 'changePasswordOtp',
+  GET_ADMIN: 'getAdmin',
+  ADD_PACKAGE: 'createStorePackages',
+  DELETE_PACKAGE: 'deleteStorePackage',
+  EDIT_PACKAGE: 'updateStorePackage',
+  ADD_NEW_PROMO: 'addNewPromocode',
+  DELETE_PROMO: 'deletePromocode',
+  UPDATE_ACCOUNT: 'updateAdminAccount',
+  DELETE_COUPON: 'deleteCoupon',
+  ADD_FAQ: 'addFaq',
+  EDIT_FAQ: 'editFaq',
+  DELETE_FAQ: 'deleteFaq',
+};

@@ -1,0 +1,159 @@
+@admin register
+
+curl --location --request POST 'localhost:3000/api/admin/signup' \
+--header 'secret: Mj6w8s8BK25sYila2xROvJS+kgb5d74ea1344923d5e130d1afk=' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"email": "mehulmorker+3@foxbrains.com" ,
+	"password": "12345678",
+	"confirmPassword": "12345678"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@admin verify email
+
+curl --location --request GET 'localhost:3000/api/admin/email_verification/c21c4139ba6632e3e8f929e2a6f5fd43c1e8534d738976bddbcaade8c1aff9ad'
+
+@use param: verification_token
+
+----------------------------------------------------------------------------------------------------------------
+@admin verify using OTP
+
+curl --location --request POST 'localhost:3000/api/admin/verification' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "otp": "881241",
+    "email":"mehulmorker+3@foxbrains.com"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@admin login user
+
+curl --location --request POST 'localhost:3000/api/admin/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"email":"mehulmorker+4@foxbrains.com",
+	"password":"12345678"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@admin forgot password
+
+curl --location --request GET 'localhost:3000/api/admin/forgot_password/email/mehulmorker+3@foxbrains.com'
+
+@use param: email
+
+----------------------------------------------------------------------------------------------------------------
+@admin change password
+
+curl --location --request POST 'localhost:3000/api/admin/change_password' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"newPassword": "11111111",
+	"confirmPassword": "11111111" ,
+	"token": "8405bcb5fff6d3c5f4f8a08252336fdea1d6769762e9f3855e440d3c9906c81d"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@admin change password using OTP
+
+curl --location --request POST 'localhost:3000/api/admin/change_password_otp' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "newPassword": "12345678",
+    "confirmPassword": "12345678",
+    "password_reset_otp": "146614",
+    "email": "mehulmorker+3@foxbrains.com"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@admin get admin account
+
+curl --location --request GET 'localhost:3000/api/admin/me' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxNywiYWRtaW5faWQiOiI3OGZhYjQxOC1lMjRhLTRlMmMtYjNkNS02MTQxMzMzZjNmZjciLCJlbWFpbCI6Im1laHVsbW9ya2VyQGZveGJyYWlucy5jb20ifSwiaWF0IjoxNjE2ODM2NDA0fQ.ESd6JWV3tZKnoo1a1pk9aq2XtxxEPzI9caBQs23g8G4'
+
+----------------------------------------------------------------------------------------------------------------
+@admin update admin account
+
+curl --location --request PUT 'localhost:3000/api/admin/me' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxNywiYWRtaW5faWQiOiI3OGZhYjQxOC1lMjRhLTRlMmMtYjNkNS02MTQxMzMzZjNmZjciLCJlbWFpbCI6Im1laHVsbW9ya2VyQGZveGJyYWlucy5jb20ifSwiaWF0IjoxNjE2ODM2NDA0fQ.ESd6JWV3tZKnoo1a1pk9aq2XtxxEPzI9caBQs23g8G4' \
+--form 'firstname="Mehul"' \
+--form 'lastname="Morker"' \
+--form 'phone_number="9824121566"' \
+--form 'country="India"' \
+--form 'oldPassword="12345678"' \
+--form 'newPassword="12345678"' \
+--form 'profile_image=@"/C:/Users/mehul/Desktop/Work Staff/Sample Images/DSC_0545.jpg"'
+
+----------------------------------------------------------------------------------------------------------------
+<--------------------------------------USER-------------------------------------->
+----------------------------------------------------------------------------------------------------------------
+@USER register
+
+curl --location --request POST 'localhost:3000/api/user/signup' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "mehulmorker+user@foxbrains.com",
+    "firstname":"jon",
+    "password": "12345678",
+    "confirmPassword": "12345678"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@USER login user
+
+curl --location --request POST 'localhost:3000/api/user/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"email":"mehulmorker+user@foxbrains.com",
+	"password":"12345678"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@USER verify using OTP
+
+curl --location --request POST 'localhost:3000/api/user/verification' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "mehulmorker+user@foxbrains.com",
+    "otp": "267769"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@USER verify email
+
+curl --location --request GET 'http://localhost:3000/api/user/email_verification/e080ba71ac46f358fa086ad0e4fc921258d3db95a446be33763f7bdfb159ec6b'
+
+----------------------------------------------------------------------------------------------------------------
+@USER Forgot password Mail
+
+curl --location --request GET 'http://localhost:3000/api/user/forgot_password/email/mehulmorker+user@foxbrains.com'
+
+----------------------------------------------------------------------------------------------------------------
+@USER RESET password FROM Mail to change password screen
+
+curl --location --request POST 'http://localhost:3000/api/user/change_password' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"newPassword": "12345678",
+	"confirmPassword": "12345678" ,
+	"token": "ea9410d282d0d65949a9bd4c8a73e6bbd86e1121094a595f8dc41a49bf7f6af7"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@USER RESET password FROM APP
+
+curl --location --request POST 'http://localhost:3000/api/user/change_password_otp' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "newPassword": "12345678",
+    "confirmPassword": "12345678",
+    "password_reset_otp": "692445",
+    "email": "mehulmorker+user@foxbrains.com"
+}'
+
+----------------------------------------------------------------------------------------------------------------
+@USER Get My Account
+
+curl --location --request GET 'http://localhost:3000/api/user/me' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoyLCJlbWFpbCI6Im1laHVsbW9ya2VyK3VzZXJAZm94YnJhaW5zLmNvbSJ9LCJpYXQiOjE2MTcyNTg5NjJ9.To6zQcxlozMGfAVuBPWXzIt_itjTR8IbcwDo97uZKKM'
